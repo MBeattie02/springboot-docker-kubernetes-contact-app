@@ -1,8 +1,8 @@
-- Docker registry images.
+# Docker registry images.
 - https://hub.docker.com/repository/docker/mabeatti/contacts-app-ui
 - https://hub.docker.com/repository/docker/mabeatti/contacts-app
 
-== Generate Docker Image
+# Generate Docker Image
 
 - Generate a Docker image:
 
@@ -14,4 +14,4 @@ docker tag contacts-app mabeatti/contacts-app:v1.0
 
 docker push mabeatti/contacts-app:v1
 
-== Creating a Kubernetes deployment
+
