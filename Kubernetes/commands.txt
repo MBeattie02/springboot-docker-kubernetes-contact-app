@@ -1,0 +1,56 @@
+# Kubernetes Docker Desktop
+
+#1
+docker images | grep contacts 
+
+#2
+docker tag contacts-app felipeg48/contacts-app:v1.0
+
+#3
+docker tag contacts-app-ui felipeg48/contacts-app-ui:v1.0
+
+
+#4
+docker push felipeg48/contacts-app:v1.0
+docker push felipeg48/contacts-app-ui:v1.0
+
+#5 
+kubectl config get-contexts
+
+#6
+Kubernetes start
+kubectl config get-contexts
+kubectl get nodes
+
+#7 - contacts-app
+cat k8s-simple.yaml
+kubectl apply -f k8s-simple.yaml
+kubectl get pods
+kubectl logs <contacts-app-UUID>
+
+kubectl get svc
+cat k8s-service.yaml
+kubectl apply -f k8s-service.yaml
+
+#7 - contacts-app-ui
+cat k8s-simple.yaml
+kubectl apply -f k8s-simple.yaml
+kubectl get pods
+kubectl logs <contacts-app-UUID>
+
+kubectl get svc
+cat k8s-service.yaml
+kubectl apply -f k8s-service.yaml
+
+
+#8
+http://localhost:8080
+
+#9
+kubectl get all --show-labels
+kubectl delete all -l app=contacts-app
+kubectl delete all -l app=contacts-app-ui
+
+
+
+

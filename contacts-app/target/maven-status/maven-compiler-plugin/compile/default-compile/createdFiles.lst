@@ -1,0 +1,6 @@
+com/apress/ContactConfig.class
+com/apress/ContactRepository.class
+com/apress/ContactController.class
+com/apress/ContactsAppApplication.class
+com/apress/ContactSecurityConfig.class
+com/apress/Contact.class

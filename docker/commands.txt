@@ -1,0 +1,32 @@
+Building with dockerfile
+
+#
+./mvnw clean package -DskipTests 
+
+#
+docker build -t contacts-app .
+
+#
+docker images | grep contacts
+
+#
+docker run -d --name contacts-app --rm -p 8080:8080 contacts-app
+
+Building with maven plugin
+
+#
+./mvnw clean spring-boot:build-image -DskipTests -Dspring-boot.build-image.imageName=contacts-app-ui
+
+#
+docker run -d --name contacts-app-ui --rm -p 8081:8081 contacts-app-ui
+
+#
+docker run -d --name contacts-app-ui --rm -p 8081:8081 \
+ -e CONTACTS_SERVER=http://host.docker.internal:8080/contacts \
+ contacts-app-ui
+
+
+Docker Compose 
+
+docker-compose up -d
+
